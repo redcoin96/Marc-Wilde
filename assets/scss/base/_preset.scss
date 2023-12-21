@@ -1,0 +1,120 @@
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+}
+
+.hidden{
+  overflow: hidden;
+}
+
+.inner{
+  padding-left: 4rem;
+  padding-right: 4rem;
+
+  @include s-mobile{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+h2{
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Syne, sans-serif;
+  font-size: 4vw;
+  font-weight: 700;
+  line-height: 130%;
+
+  @include tablet{
+    font-size: 4rem;
+  }
+}
+
+.horizontal-line{
+  width: 100%;
+  height: 2px;
+  background-color: $black-line;
+  display: block;
+  transform-origin: left;
+}
+
+.vertical-line {
+  width: 2px;
+  height: 100%;
+  background-color: $black-line;
+  transform-origin: top;
+}
+
+.text-meta {
+  color: $white;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  font-family: Syne, sans-serif;
+  font-size: 1.6rem;
+}
+
+.text-color-orange{
+  color: $orange;
+}
+
+.text-color-grey{
+  color: $grey;
+}
+
+.oh{
+  overflow: hidden;
+}
+
+.image-noise{
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  opacity: .7;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  background-image: url("https://assets-global.website-files.com/654fa396610b458bf44c6f7e/655b7420c37b12ca15cb1f01_Noise%20New.png");
+  background-size: auto;
+  background-attachment: scroll;
+  border: 1px #000;
+  display: block;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+.hover-link {
+  position: relative;
+
+  &::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: $white;
+    transform-origin: right;
+    transition: transform 0.25s ease-out;
+  }
+
+  &:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.mo{
+  display: none;
+
+  @include l-mobile{
+    display: block;
+  }
+}
